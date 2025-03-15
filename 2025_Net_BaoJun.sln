@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstract_Demo", "Abstract_D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface_Demo", "Interface_Demo\Interface_Demo.csproj", "{36CB6BCF-B33D-4DE5-B8FF-F64FC4443092}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "多態_Demo", "多態_Demo\多態_Demo.csproj", "{A8D89CE5-E4B0-43A6-8C35-F2F78D363519}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{36CB6BCF-B33D-4DE5-B8FF-F64FC4443092}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36CB6BCF-B33D-4DE5-B8FF-F64FC4443092}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36CB6BCF-B33D-4DE5-B8FF-F64FC4443092}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8D89CE5-E4B0-43A6-8C35-F2F78D363519}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8D89CE5-E4B0-43A6-8C35-F2F78D363519}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8D89CE5-E4B0-43A6-8C35-F2F78D363519}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8D89CE5-E4B0-43A6-8C35-F2F78D363519}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
