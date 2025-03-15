@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "String_Demo", "String_Demo\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Static_Single", "Static_Single\Static_Single.csproj", "{72615257-B6A0-4DB0-BEC8-A9C732FEA41C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "繼承", "繼承\繼承.csproj", "{FC334E19-8EF5-47F7-B3DC-8131EFB45BFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{72615257-B6A0-4DB0-BEC8-A9C732FEA41C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72615257-B6A0-4DB0-BEC8-A9C732FEA41C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72615257-B6A0-4DB0-BEC8-A9C732FEA41C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC334E19-8EF5-47F7-B3DC-8131EFB45BFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC334E19-8EF5-47F7-B3DC-8131EFB45BFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC334E19-8EF5-47F7-B3DC-8131EFB45BFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC334E19-8EF5-47F7-B3DC-8131EFB45BFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
