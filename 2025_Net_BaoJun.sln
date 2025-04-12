@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "多態_Demo", "多態_Demo\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI_Demo", "DI_Demo\DI_Demo.csproj", "{8FB1959C-9CDA-4C71-A05D-C9D21A022205}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "反射_Deom", "反射_Deom\反射_Deom.csproj", "{8E02F56D-230F-49A0-A74C-8E99E73897D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{8FB1959C-9CDA-4C71-A05D-C9D21A022205}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FB1959C-9CDA-4C71-A05D-C9D21A022205}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FB1959C-9CDA-4C71-A05D-C9D21A022205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E02F56D-230F-49A0-A74C-8E99E73897D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E02F56D-230F-49A0-A74C-8E99E73897D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E02F56D-230F-49A0-A74C-8E99E73897D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E02F56D-230F-49A0-A74C-8E99E73897D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

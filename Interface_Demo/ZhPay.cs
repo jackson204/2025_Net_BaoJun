@@ -1,6 +1,6 @@
 namespace Interface_Demo;
 
-class ZhPay : IPay
+internal class ZhPay : IPay
 {
     public void Pay()
     {

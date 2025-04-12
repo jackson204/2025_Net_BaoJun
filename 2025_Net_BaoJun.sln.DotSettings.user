@@ -1,11 +1,18 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AInt32_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003Fde7177e8a31c1e501222daf218f2e9532ff54cdb767595dc7e94cc73c8e95f1_003FInt32_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AServiceCollectionContainerBuilderExtensions_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003Fd4a8f8d5219d57524ca89ff2dc8bdc5a23996aa3913260a7142bfd992c393a4_003FServiceCollectionContainerBuilderExtensions_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AType_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FAppData_003FRoaming_003FJetBrains_003FRider2024_002E3_003Fresharper_002Dhost_003FSourcesCache_003Fe7dbd6fe331ff9a3c4b24dd470ec1f19a71b7c5acf258b81ae7f761cd2b319b_003FType_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=2b89d856_002Df6c3_002D4a04_002D8bc1_002D9692e0db2e29/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::38427867-1B14-40B1-8971-5F2910455458::net6.0::String_Demo.UnitTest1.Test1&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::38427867-1B14-40B1-8971-5F2910455458::net6.0::String_Demo.UnitTest1.Test2&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::921C71DD-9654-42AD-B444-A4A83D0B8B2F::net6.0::Enum_Demo.UnitTest1.Test1&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::921C71DD-9654-42AD-B444-A4A83D0B8B2F::net6.0::Enum_Demo.UnitTest1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::8E02F56D-230F-49A0-A74C-8E99E73897D4::net8.0::反射_Deom.UnitTest1.Test1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::8E02F56D-230F-49A0-A74C-8E99E73897D4::net8.0::反射_Deom.UnitTest1.Test2&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::8E02F56D-230F-49A0-A74C-8E99E73897D4::net8.0::反射_Deom.UnitTest1.查公開的屬性&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::8E02F56D-230F-49A0-A74C-8E99E73897D4::net8.0::反射_Deom.UnitTest1.把屬性全查出來包含私有的&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::8E02F56D-230F-49A0-A74C-8E99E73897D4::net8.0::反射_Deom.UnitTest1.取特定的屬性&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::8E02F56D-230F-49A0-A74C-8E99E73897D4::net8.0::反射_Deom.UnitTest1&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

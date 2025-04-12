@@ -1,6 +1,6 @@
 namespace Interface_Demo;
 
-class BaoPay : IPay
+internal class BaoPay : IPay
 {
     public void Pay()
     {

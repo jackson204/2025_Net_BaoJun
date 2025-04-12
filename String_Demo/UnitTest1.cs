@@ -1,4 +1,3 @@
-using System.Xml;
 using FluentAssertions;
 
 namespace String_Demo;
@@ -49,16 +48,15 @@ public class UnitTest1
     [Fact]
     public void Test6()
     {
-        int a = 1;
+        var a = 1;
         int? b = null;
         (a - b).Should().Be(null);
-
     }
 
     [Fact]
     public void Test7()
     {
-        DateTime a = new DateTime(2021, 1, 1);
+        var a = new DateTime(2021, 1, 1);
         DateTime b = default;
         DateTime? c = null;
         a.Should().Be(new DateTime(2021, 1, 1));

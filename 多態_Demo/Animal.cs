@@ -1,6 +1,6 @@
 namespace 多態_Demo;
 
-class Animal
+internal class Animal
 {
     public string Name { get; set; }
 

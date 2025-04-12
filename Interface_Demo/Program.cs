@@ -1,10 +1,10 @@
 namespace Interface_Demo;
 
-class Program
+internal class Program
 {
     private static void Main(string[] args)
     {
-      IPay pay = new ZhPay();
+        IPay pay = new ZhPay();
         pay.Pay();
     }
 }

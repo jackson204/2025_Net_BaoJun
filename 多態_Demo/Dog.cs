@@ -1,6 +1,6 @@
 namespace 多態_Demo;
 
-class Dog : Animal
+internal class Dog : Animal
 {
     public void Bark()
     {

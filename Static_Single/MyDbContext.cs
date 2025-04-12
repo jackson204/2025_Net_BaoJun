@@ -1,17 +1,15 @@
-class MyDbContext
+internal class MyDbContext
 {
-    public static MyDbContext Instance => _myDbContext;
-
-    private static MyDbContext _myDbContext = null;
+    static MyDbContext()
+    {
+        Instance = new MyDbContext();
+    }
 
     private MyDbContext()
     {
     }
 
-    static MyDbContext()
-    {
-        _myDbContext = new MyDbContext();
-    }
+    public static MyDbContext Instance { get; } = null;
 
     public string UserName { get; set; }
 }

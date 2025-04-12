@@ -1,16 +1,16 @@
 ﻿namespace 繼承;
 
-class Program
+internal class Program
 {
     private static void Main(string[] args)
     {
-        Cat cat = new Cat("Kitty");
-    
+        var cat = new Cat("Kitty");
+
         cat.Roar();
-        Dog dog = new Dog();
+        var dog = new Dog();
         dog.Name = "Doggy";
         dog.Roar();
-        Animal animal = new Animal();
+        var animal = new Animal();
         animal.Name = "Animal";
         animal.Roar();
     }

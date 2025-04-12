@@ -1,6 +1,6 @@
 namespace Interface_Demo;
 
-interface IPay
+internal interface IPay
 {
     void Pay();
 }
