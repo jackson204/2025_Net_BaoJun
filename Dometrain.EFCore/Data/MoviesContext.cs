@@ -7,7 +7,7 @@ public class MoviesContext : DbContext
 {
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=localhost;Database=MoviesDb;User Id=sa;Password=YourStrong!Passw0rd;");
+        optionsBuilder.UseSqlServer("Server=localhost;Database=MoviesDb;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True;");
         base.OnConfiguring(optionsBuilder);
     }
 
