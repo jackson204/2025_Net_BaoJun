@@ -1,5 +1,7 @@
+using Dometrain.EFCore.Data;
 using Dometrain.EFCore.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Dometrain.EFCore.Controllers;
 
@@ -7,11 +9,18 @@ namespace Dometrain.EFCore.Controllers;
 [Route("[controller]")]
 public class MoviesController : Controller
 {
+    private readonly MoviesContext _context;
+
+    public MoviesController(MoviesContext context)
+    {
+        _context = context;
+    }
     [HttpGet]
     [ProducesResponseType(typeof(List<Movie>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetAll()
     {
-        throw new NotImplementedException();
+        var movies = await _context.Movies.ToListAsync();
+        return Ok(movies);
     }
 
     [HttpGet("{id:int}")]
