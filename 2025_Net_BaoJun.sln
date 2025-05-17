@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "擴展方法_Demo", "擴展
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dometrain.EFCore", "Dometrain.EFCore\Dometrain.EFCore.csproj", "{541D998E-E3E0-4667-90F1-5C1D46E8285D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleDBContext", "ConsoleDBContext\ConsoleDBContext.csproj", "{B4BCAC22-3F9A-42BA-8011-FB642BC57440}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,5 +74,9 @@ Global
 		{541D998E-E3E0-4667-90F1-5C1D46E8285D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{541D998E-E3E0-4667-90F1-5C1D46E8285D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{541D998E-E3E0-4667-90F1-5C1D46E8285D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4BCAC22-3F9A-42BA-8011-FB642BC57440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4BCAC22-3F9A-42BA-8011-FB642BC57440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4BCAC22-3F9A-42BA-8011-FB642BC57440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4BCAC22-3F9A-42BA-8011-FB642BC57440}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
