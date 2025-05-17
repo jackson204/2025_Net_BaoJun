@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace 擴展方法_Demo;
 
 public class UnitTest1
@@ -16,4 +18,13 @@ public class UnitTest1
         Action testCode = () => number.ParseToInt();
         Assert.Throws<FormatException>(testCode);
     }
+    
+    [Fact]
+    public void Test3()
+    {
+        var status = Status.Success;
+        var description = status.GetDescription();
+        Assert.Equal("成功", description);
+    }
+    
 }

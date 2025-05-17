@@ -25,5 +25,6 @@
     &lt;TestId&gt;xUnit::8E02F56D-230F-49A0-A74C-8E99E73897D4::net8.0::反射_Deom.UnitTest1&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::C5C1F758-713F-4D11-AF2D-9FDF4C5FCFEB::net6.0::擴展方法_Demo.UnitTest1.Test1&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::C5C1F758-713F-4D11-AF2D-9FDF4C5FCFEB::net6.0::擴展方法_Demo.UnitTest1.Test2&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::C5C1F758-713F-4D11-AF2D-9FDF4C5FCFEB::net6.0::擴展方法_Demo.UnitTest1.Test3&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
