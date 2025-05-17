@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication2", "Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "擴展方法_Demo", "擴展方法_Demo\擴展方法_Demo.csproj", "{C5C1F758-713F-4D11-AF2D-9FDF4C5FCFEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dometrain.EFCore", "Dometrain.EFCore\Dometrain.EFCore.csproj", "{541D998E-E3E0-4667-90F1-5C1D46E8285D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,5 +68,9 @@ Global
 		{C5C1F758-713F-4D11-AF2D-9FDF4C5FCFEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5C1F758-713F-4D11-AF2D-9FDF4C5FCFEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5C1F758-713F-4D11-AF2D-9FDF4C5FCFEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{541D998E-E3E0-4667-90F1-5C1D46E8285D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{541D998E-E3E0-4667-90F1-5C1D46E8285D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{541D998E-E3E0-4667-90F1-5C1D46E8285D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{541D998E-E3E0-4667-90F1-5C1D46E8285D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
