@@ -22,6 +22,17 @@ public class MoviesController : Controller
         var movies = await _context.Movies.ToListAsync();
         return Ok(movies);
     }
+    
+    [HttpGet("by-year/{year:int}")]
+    [ProducesResponseType(typeof(List<Movie>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetAllByYear([FromRoute] int year)
+    {
+        var movies = await _context.Movies
+            .Where(movie => movie.ReleaseDate.Year == year)
+            .ToListAsync();
+        return Ok(movies);
+    }
+ 
 
     [HttpGet("{id:int}")]
     [ProducesResponseType(typeof(Movie), StatusCodes.Status200OK)]
