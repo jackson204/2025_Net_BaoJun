@@ -11,5 +11,8 @@ public class MoviesContext : DbContext
         base.OnConfiguring(optionsBuilder);
     }
 
-    public DbSet<Movie> Movies => Set<Movie>();
+    public DbSet<Movie> Movies
+    {
+        get { return Set<Movie>(); }
+    }
 }

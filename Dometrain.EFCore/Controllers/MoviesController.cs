@@ -28,14 +28,17 @@ public class MoviesController : Controller
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Get([FromRoute] int id)
     {
-        throw new NotImplementedException();
+        var movie = await _context.Movies.FirstOrDefaultAsync(movie => movie.Id == id );
+        return movie is null ? NotFound() : Ok(movie);
     }
     
     [HttpPost]
     [ProducesResponseType(typeof(Movie), StatusCodes.Status201Created)]
     public async Task<IActionResult> Create([FromBody] Movie movie)
     {
-        throw new NotImplementedException();
+        await _context.Movies.AddAsync(movie);
+        await _context.SaveChangesAsync();
+        return CreatedAtAction(nameof(Get), new { id = movie.Id }, movie);
     }
     
     [HttpPut("{id:int}")]
@@ -43,7 +46,16 @@ public class MoviesController : Controller
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Movie movie)
     {
-        throw new NotImplementedException();
+        var firstOrDefaultAsync = await _context.Movies.FirstOrDefaultAsync(movie1 => movie1.Id == id );
+        if (firstOrDefaultAsync is null)
+        {
+            return NotFound();
+        }
+        firstOrDefaultAsync.Title = movie.Title;
+        firstOrDefaultAsync.ReleaseDate = movie.ReleaseDate;
+        firstOrDefaultAsync.Synopsis = movie.Synopsis;
+        await _context.SaveChangesAsync();
+        return Ok(firstOrDefaultAsync);
     }
     
     [HttpDelete("{id:int}")]
@@ -51,6 +63,13 @@ public class MoviesController : Controller
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Remove([FromRoute] int id)
     {
-        throw new NotImplementedException();
+        var firstOrDefaultAsync = await _context.Movies.FirstOrDefaultAsync(movie => movie.Id == id );
+        if (firstOrDefaultAsync is null)
+        {
+            return NotFound();
+        }
+        _context.Remove(firstOrDefaultAsync);
+        await _context.SaveChangesAsync();
+        return Ok();
     }
 }
