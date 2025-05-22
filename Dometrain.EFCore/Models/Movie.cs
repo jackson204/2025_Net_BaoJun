@@ -1,8 +1,16 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Dometrain.EFCore.Models;
 
+[Table("Pictures")]
 public class Movie
 {
-    public int Id { get; set; }
+    [Key]
+    public int Identifier { get; set; }
+    
+    [Column("Title" , TypeName = "nvarchar(100)")]
+    [MaxLength(100)]
     public string? Title { get; set; }    
     public DateTime ReleaseDate { get; set; }
     public string? Synopsis { get; set; }

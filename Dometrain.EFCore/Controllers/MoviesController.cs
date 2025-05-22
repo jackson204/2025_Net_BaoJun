@@ -45,7 +45,7 @@ public class MoviesController : Controller
             .Where(movie => movie.ReleaseDate.Year == year)
             .Select(movie => new MovieTitle
             {
-                Id = movie.Id,
+                Id = movie.Identifier,
                 Title = movie.Title
             }).ToListAsync();
         return Ok(movies);
@@ -56,7 +56,7 @@ public class MoviesController : Controller
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Get([FromRoute] int id)
     {
-        var movie = await _context.Movies.FirstOrDefaultAsync(movie => movie.Id == id);
+        var movie = await _context.Movies.FirstOrDefaultAsync(movie => movie.Identifier == id);
         return movie is null ? NotFound() : Ok(movie);
     }
 
@@ -66,7 +66,7 @@ public class MoviesController : Controller
     {
         await _context.Movies.AddAsync(movie);
         await _context.SaveChangesAsync();
-        return CreatedAtAction(nameof(Get), new { id = movie.Id }, movie);
+        return CreatedAtAction(nameof(Get), new { id = movie.Identifier }, movie);
     }
 
     [HttpPut("{id:int}")]
@@ -74,7 +74,7 @@ public class MoviesController : Controller
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Update([FromRoute] int id, [FromBody] Movie movie)
     {
-        var firstOrDefaultAsync = await _context.Movies.FirstOrDefaultAsync(movie1 => movie1.Id == id);
+        var firstOrDefaultAsync = await _context.Movies.FirstOrDefaultAsync(movie1 => movie1.Identifier == id);
         if (firstOrDefaultAsync is null)
         {
             return NotFound();
@@ -91,7 +91,7 @@ public class MoviesController : Controller
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Remove([FromRoute] int id)
     {
-        var firstOrDefaultAsync = await _context.Movies.FirstOrDefaultAsync(movie => movie.Id == id);
+        var firstOrDefaultAsync = await _context.Movies.FirstOrDefaultAsync(movie => movie.Identifier == id);
         if (firstOrDefaultAsync is null)
         {
             return NotFound();
