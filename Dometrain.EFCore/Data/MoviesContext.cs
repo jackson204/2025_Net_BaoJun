@@ -8,6 +8,8 @@ public class MoviesContext : DbContext
 {
     public DbSet<Movie> Movies => Set<Movie>();
 
+    public DbSet<Genre> Genres => Set<Genre>();
+    
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
@@ -17,6 +19,7 @@ public class MoviesContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.ApplyConfiguration(new GenreMapping());
         modelBuilder.ApplyConfiguration(new MovieMapping());
         base.OnModelCreating(modelBuilder);
     }
