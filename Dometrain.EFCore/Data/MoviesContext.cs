@@ -1,3 +1,4 @@
+using Dometrain.EFCore.Data.EntityMapping;
 using Dometrain.EFCore.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -5,6 +6,8 @@ namespace Dometrain.EFCore.Data;
 
 public class MoviesContext : DbContext
 {
+    public DbSet<Movie> Movies => Set<Movie>();
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
@@ -12,8 +15,9 @@ public class MoviesContext : DbContext
         base.OnConfiguring(optionsBuilder);
     }
 
-    public DbSet<Movie> Movies
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        get { return Set<Movie>(); }
+        modelBuilder.ApplyConfiguration(new MovieMapping());
+        base.OnModelCreating(modelBuilder);
     }
 }
