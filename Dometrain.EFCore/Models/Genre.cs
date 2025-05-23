@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace Dometrain.EFCore.Models;
 
 public class Genre
@@ -6,5 +8,6 @@ public class Genre
 
     public string Name { get; set; } = string.Empty;
 
+    [JsonIgnore]
     public ICollection<Movie> Movies { get; set; } = new HashSet<Movie>();
 }
