@@ -1,4 +1,5 @@
 using Dometrain.EFCore.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Add DbContext with SQL Server
-builder.Services.AddDbContext<MoviesContext>();
+builder.Services.AddDbContext<MoviesContext>(optionsBuilder =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("MoviesContext");
+    optionsBuilder.UseSqlServer(connectionString);
+    optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
+});
 var app = builder.Build();
 
 var serviceScope = app.Services.CreateScope();
