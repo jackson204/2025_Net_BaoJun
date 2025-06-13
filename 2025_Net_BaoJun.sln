@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleDBContext", "Console
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_Include", "Demo_Include\Demo_Include.csproj", "{523DE146-D425-42D6-B77B-99D564E2F525}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json_Demo", "Json_Demo\Json_Demo.csproj", "{44177A7E-75D1-47DF-9611-D259A4B2C961}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,5 +86,9 @@ Global
 		{523DE146-D425-42D6-B77B-99D564E2F525}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{523DE146-D425-42D6-B77B-99D564E2F525}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{523DE146-D425-42D6-B77B-99D564E2F525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44177A7E-75D1-47DF-9611-D259A4B2C961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44177A7E-75D1-47DF-9611-D259A4B2C961}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44177A7E-75D1-47DF-9611-D259A4B2C961}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44177A7E-75D1-47DF-9611-D259A4B2C961}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
