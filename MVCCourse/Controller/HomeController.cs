@@ -1,10 +1,12 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace MVCCourse.Controller;
 
 public class HomeController : Microsoft.AspNetCore.Mvc.Controller
 {
     // GET
-    public string Index()
+    public IActionResult Index()
     {
-        return "Hello, World!";
+        return View();
     }
 }
