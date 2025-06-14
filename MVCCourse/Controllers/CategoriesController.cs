@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using MVCCourse.Models;
 
 namespace MVCCourse.Controllers;
 
@@ -6,18 +7,13 @@ public class CategoriesController : Controller
 {
     public IActionResult Edit(int? id)
     {
-        if (id == null)
+        var category = new Category()
         {
-            return new ContentResult
-            {
-                Content = "No ID provided"
-            };
-        }
-
-        return new ContentResult
-        {
-            Content = id.ToString()
+            CategoryId = id ?? 0,
+            Name = "Category " + (id ?? 0),
+            Description = "Description for category " + (id ?? 0)
         };
+        return View(category);
     }
 
     // GET
