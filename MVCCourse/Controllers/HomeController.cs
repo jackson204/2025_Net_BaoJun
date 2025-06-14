@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace MVCCourse.Controller;
+namespace MVCCourse.Controllers;
 
-public class HomeController : Microsoft.AspNetCore.Mvc.Controller
+public class HomeController : Controller
 {
     // GET
     public IActionResult Index()
