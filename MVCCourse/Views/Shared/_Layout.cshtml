@@ -3,14 +3,15 @@
 <head>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 	<title>Supermarket Management</title>
-	<link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />    
+	<link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css"/>
 </head>
 <body>
 <header>
 	<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
 		<div class="container-fluid">
 			<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Supermarket</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+			        aria-controls="navbarSupportedContent"
 			        aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -19,21 +20,23 @@
 					<li class="nav-item">
 						<a class="nav-link text-dark" href="/home/index" asp-action="index">Home</a>
 					</li>
-				
+
 					<li class="nav-item">
 						<a class="nav-link text-dark" href="/categories/index" asp-action="index">Categories</a>
 					</li>
-				
-				
 				</ul>
-
-				<partial name="_LoginPartial" />
 			</div>
 		</div>
 	</nav>
 </header>
 <div class="container">
-	@RenderBody()
+	<div class="pb-3">
+		@RenderSection("title")
+	</div>
+	<div>
+		@RenderBody()
+	</div>
+
 </div>
 </body>
 </html>
