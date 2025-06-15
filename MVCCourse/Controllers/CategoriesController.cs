@@ -7,9 +7,15 @@ public class CategoriesController : Controller
 {
     public IActionResult Add()
     {
-      return View();
+        return View();
     }
-    
+
+    public IActionResult Delete(int? categoryId)
+    {
+        CategoriesRepository.DeleteCategory(categoryId ?? 0);
+        return RedirectToAction(nameof(Index));
+    }
+
     [HttpPost]
     public IActionResult Add(Category category)
     {
@@ -19,8 +25,8 @@ public class CategoriesController : Controller
         }
         CategoriesRepository.AddCategory(category);
         return RedirectToAction(nameof(Index));
-      
     }
+
     public IActionResult Edit(int? id)
     {
         var category = CategoriesRepository.GetCategoryById(id ?? 0);
