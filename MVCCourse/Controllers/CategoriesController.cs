@@ -5,13 +5,28 @@ namespace MVCCourse.Controllers;
 
 public class CategoriesController : Controller
 {
-    
-    public IActionResult Edit(int? id)
+    public IActionResult Add()
     {
-        var category = CategoriesRepository.GetCategoryById( id ?? 0);
-        return View(category);
+      return View();
     }
     
+    [HttpPost]
+    public IActionResult Add(Category category)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(category);
+        }
+        CategoriesRepository.AddCategory(category);
+        return RedirectToAction(nameof(Index));
+      
+    }
+    public IActionResult Edit(int? id)
+    {
+        var category = CategoriesRepository.GetCategoryById(id ?? 0);
+        return View(category);
+    }
+
     [HttpPost]
     public IActionResult Edit(Category category)
     {
@@ -19,10 +34,8 @@ public class CategoriesController : Controller
         {
             return View(category);
         }
-        CategoriesRepository.UpdateCategory(category.CategoryId,category);
+        CategoriesRepository.UpdateCategory(category.CategoryId, category);
         return RedirectToAction(nameof(Index));
-
-
     }
 
     // GET
