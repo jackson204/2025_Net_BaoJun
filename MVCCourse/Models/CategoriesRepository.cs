@@ -48,11 +48,11 @@ public static class CategoriesRepository
         return category;
     }
 
-    public static void UpdateCategory(Category category)
+    public static void UpdateCategory(int categoryId, Category category)
     {
         ArgumentNullException.ThrowIfNull(category);
 
-        var existingCategory = GetCategoryById(category.CategoryId);
+        var existingCategory = GetCategoryById(categoryId);
         if (existingCategory == null)
         {
             throw new KeyNotFoundException($"Category with ID {category.CategoryId} not found.");
