@@ -37,7 +37,7 @@
 	<div>
 		@RenderBody()
 	</div>
-
+@await RenderSectionAsync("scripts", required: false)
 </div>
 </body>
 </html>
