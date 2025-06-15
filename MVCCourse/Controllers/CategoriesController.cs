@@ -15,8 +15,14 @@ public class CategoriesController : Controller
     [HttpPost]
     public IActionResult Edit(Category category)
     {
-       CategoriesRepository.UpdateCategory(category.CategoryId,category);
+        if (!ModelState.IsValid)
+        {
+            return View(category);
+        }
+        CategoriesRepository.UpdateCategory(category.CategoryId,category);
         return RedirectToAction(nameof(Index));
+
+
     }
 
     // GET
