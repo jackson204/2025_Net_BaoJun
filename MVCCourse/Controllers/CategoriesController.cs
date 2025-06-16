@@ -7,6 +7,7 @@ public class CategoriesController : Controller
 {
     public IActionResult Add()
     {
+        ViewBag.Action = "Add";
         return View();
     }
 
@@ -29,6 +30,7 @@ public class CategoriesController : Controller
 
     public IActionResult Edit(int? id)
     {
+        ViewBag.Action = "Edit";
         var category = CategoriesRepository.GetCategoryById(id ?? 0);
         return View(category);
     }
