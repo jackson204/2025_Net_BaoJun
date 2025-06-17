@@ -1,3 +1,5 @@
+namespace Static_Single;
+
 internal class MyDbContext
 {
     static MyDbContext()

@@ -1,17 +1,22 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Static_Single;
+
 var myClass1 = new MyClass();
 var myClass2 = new MyClass();
 MyDbContext.Instance.UserName = "Admin";
 
-public class MyClass
+namespace Static_Single
 {
-    static MyClass()
+    public class MyClass
     {
-        Console.WriteLine("MyClass static constructor");
-    }
+        static MyClass()
+        {
+            Console.WriteLine("MyClass static constructor");
+        }
 
-    public MyClass()
-    {
-        Console.WriteLine("MyClass constructors");
+        public MyClass()
+        {
+            Console.WriteLine("MyClass constructors");
+        }
     }
 }
