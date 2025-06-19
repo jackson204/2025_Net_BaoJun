@@ -1,63 +1,86 @@
-﻿namespace MVCCourse.Models
+﻿namespace MVCCourse.Models;
+
+public class ProductsRepository
 {
-    public class ProductsRepository
+    private static readonly List<Product> _products = new()
     {
-        private static List<Product> _products = new List<Product>()
-        {
-            new Product { ProductId = 1, CategoryId = 1, Name = "Iced Tea", Quantity = 100, Price = 1.99 },
-            new Product { ProductId = 2, CategoryId = 1, Name = "Canada Dry", Quantity = 200, Price = 1.99 },
-            new Product { ProductId = 3, CategoryId = 2, Name = "Whole Wheat Bread", Quantity = 300, Price = 1.50 },
-            new Product { ProductId = 4, CategoryId = 2, Name = "White Bread", Quantity = 300, Price = 1.50 }
-        };
+        new Product { ProductId = 1, CategoryId = 1, Name = "Iced Tea", Quantity = 100, Price = 1.99 },
+        new Product { ProductId = 2, CategoryId = 1, Name = "Canada Dry", Quantity = 200, Price = 1.99 },
+        new Product { ProductId = 3, CategoryId = 2, Name = "Whole Wheat Bread", Quantity = 300, Price = 1.50 },
+        new Product { ProductId = 4, CategoryId = 2, Name = "White Bread", Quantity = 300, Price = 1.50 }
+    };
 
-        public static void AddProduct(Product product)
+    public static void AddProduct(Product product)
+    {
+        var maxId = _products.Max(x => x.ProductId);
+        product.ProductId = maxId + 1;
+        _products.Add(product);
+    }
+
+    public static void DeleteProduct(int productId)
+    {
+        var product = _products.FirstOrDefault(x => x.ProductId == productId);
+        if (product != null)
         {
-            var maxId = _products.Max(x => x.ProductId);
-            product.ProductId = maxId + 1;
-            _products.Add(product);
+            _products.Remove(product);
+        }
+    }
+
+    public static Product? GetProductById(int productId, bool loadCategory = false)
+    {
+        var product = _products.FirstOrDefault(x => x.ProductId == productId);
+        if (product != null)
+        {
+            var prod = new Product
+            {
+                ProductId = product.ProductId,
+                Name = product.Name,
+                Quantity = product.Quantity,
+                Price = product.Price,
+                CategoryId = product.CategoryId
+            };
+            if (loadCategory && product.CategoryId.HasValue)
+            {
+                prod.Category = CategoriesRepository.GetCategoryById(product.CategoryId.Value);
+            }
         }
 
-        public static List<Product> GetProducts() => _products;
+        return null;
+    }
 
-        public static Product? GetProductById(int productId)
+    public static List<Product> GetProducts(bool loadCategory = false)
+    {
+        if (!loadCategory)
         {
-            var product = _products.FirstOrDefault(x => x.ProductId == productId);
-            if (product != null)
+            return _products;
+        }
+        if (_products.Count > 0)
+        {
+            _products.ForEach(product =>
             {
-                return new Product
+                if (product.CategoryId.HasValue)
                 {
-                    ProductId = product.ProductId,
-                    Name = product.Name,
-                    Quantity = product.Quantity,
-                    Price = product.Price,
-                    CategoryId = product.CategoryId                    
-                };
-            }
+                    product.Category = CategoriesRepository.GetCategoryById(product.ProductId);
+                }
+            });
+        }
+        return _products;
+    }
 
-            return null;
+    public static void UpdateProduct(int productId, Product product)
+    {
+        if (productId != product.ProductId)
+        {
+            return;
         }
 
-        public static void UpdateProduct(int productId, Product product)
+        var productToUpdate = _products.FirstOrDefault(x => x.ProductId == productId);
+        if (productToUpdate != null)
         {
-            if (productId != product.ProductId) return;
-
-            var productToUpdate = _products.FirstOrDefault(x => x.ProductId == productId);
-            if (productToUpdate != null)
-            {
-                productToUpdate.Name = product.Name;
-                productToUpdate.Quantity = product.Quantity;
-                productToUpdate.Price = product.Price;
-                productToUpdate.CategoryId = product.CategoryId;
-            }
-        }
-
-        public static void DeleteProduct(int productId)
-        {
-            var product = _products.FirstOrDefault(x => x.ProductId == productId);
-            if (product != null)
-            {
-                _products.Remove(product);
-            }
+            productToUpdate.Name = product.Name;
+            productToUpdate.Quantity = product.Quantity;
+            productToUpdate.Price = product.Price;
+            productToUpdate.CategoryId = product.CategoryId;
         }
     }
 }

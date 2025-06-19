@@ -7,7 +7,7 @@ public class ProductsController : Controller
     // GET
     public IActionResult Index()
     {
-        var products = ProductsRepository.GetProducts();
+        var products = ProductsRepository.GetProducts(true);
         return View(products);
     }
 }
