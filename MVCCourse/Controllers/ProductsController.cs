@@ -6,12 +6,17 @@ namespace MVCCourse.Controllers;
 
 public class ProductsController : Controller
 {
+    public IActionResult Delete(int id)
+    {
+        ProductsRepository.DeleteProduct(id);
+        return RedirectToAction(nameof(Index));
+    }
     public IActionResult Edit(int id)
     {
         ViewBag.Action = "Edit";
         var productViewModel = new ProductViewModel
         {
-            Product = ProductsRepository.GetProductById(id)?? new Product(),
+            Product = ProductsRepository.GetProductById(id) ?? new Product(),
             Categories = CategoriesRepository.GetCategories()
         };
         return View(productViewModel);
@@ -22,15 +27,14 @@ public class ProductsController : Controller
     {
         if (ModelState.IsValid)
         {
-            ProductsRepository.UpdateProduct(productViewModel.Product.ProductId,productViewModel.Product);
+            ProductsRepository.UpdateProduct(productViewModel.Product.ProductId, productViewModel.Product);
             return RedirectToAction(nameof(Index));
         }
         ViewBag.Action = "Edit";
         productViewModel.Categories = CategoriesRepository.GetCategories();
-        return View(productViewModel); 
+        return View(productViewModel);
     }
-    
-    
+
     public IActionResult Add()
     {
         var productViewModel = new ProductViewModel
@@ -40,6 +44,7 @@ public class ProductsController : Controller
         ViewBag.Action = "Add";
         return View(productViewModel);
     }
+
     [HttpPost]
     public IActionResult Add(ProductViewModel productViewModel)
     {
