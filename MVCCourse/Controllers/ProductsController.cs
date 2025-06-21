@@ -10,9 +10,9 @@ public class ProductsController : Controller
     {
         var productViewModel = new ProductViewModel
         {
-            Categories = new []{new CategoryDto()}
+            Categories = CategoriesRepository.GetCategories()
         };
-        return View();
+        return View(productViewModel);
     }
 
     // GET
