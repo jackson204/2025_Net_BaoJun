@@ -14,6 +14,16 @@ public class ProductsController : Controller
         };
         return View(productViewModel);
     }
+    [HttpPost]
+    public IActionResult Add(ProductViewModel productViewModel)
+    {
+        if (ModelState.IsValid)
+        {
+            ProductsRepository.AddProduct(productViewModel.Product);
+            return RedirectToAction(nameof(Index));
+        }
+        return View(productViewModel);
+    }
 
     // GET
     public IActionResult Index()
