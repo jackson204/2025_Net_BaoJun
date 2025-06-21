@@ -2,7 +2,7 @@ namespace MVCCourse.Models;
 
 public static class CategoriesRepository
 {
-    private static readonly List<Category> _categories =
+    private static List<Category> _categories =
     [
         new() { CategoryId = 1, Name = "Beverages", Description = "Soft drinks, coffees, teas, beers, and ales" },
         new() { CategoryId = 2, Name = "Condiments", Description = "Sweet and savory sauces, relishes, spreads, and seasonings" },
@@ -18,7 +18,19 @@ public static class CategoriesRepository
     {
         ArgumentNullException.ThrowIfNull(category);
 
-        category.CategoryId = _categories.Max(c => c.CategoryId) + 1;
+        if (_categories != null && _categories.Count > 0)
+        {
+            var max = _categories.Max(c => c.CategoryId);
+            category.CategoryId = max + 1;
+        }
+        else
+        {
+            category.CategoryId = 1;
+        }
+        if (_categories == null)
+        {
+            _categories = new List<Category>();
+        }
         _categories.Add(category);
     }
 
