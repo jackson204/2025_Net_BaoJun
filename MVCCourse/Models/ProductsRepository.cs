@@ -2,7 +2,7 @@
 
 public class ProductsRepository
 {
-    private static readonly List<Product> _products = new()
+    private static List<Product> _products = new()
     {
         new Product { ProductId = 1, CategoryId = 1, Name = "Iced Tea", Quantity = 100, Price = 1.99 },
         new Product { ProductId = 2, CategoryId = 1, Name = "Canada Dry", Quantity = 200, Price = 1.99 },
@@ -12,8 +12,19 @@ public class ProductsRepository
 
     public static void AddProduct(Product product)
     {
-        var maxId = _products.Max(x => x.ProductId);
-        product.ProductId = maxId + 1;
+        if (_products !=null && _products.Count>0)
+        {
+            var maxId = _products.Max(x => x.ProductId);
+            product.ProductId = maxId + 1;
+        }
+        else
+        {
+            product.ProductId = 1;
+        }
+         if (_products ==null)
+         {
+             _products = new List<Product>();
+         }
         _products.Add(product);
     }
 
