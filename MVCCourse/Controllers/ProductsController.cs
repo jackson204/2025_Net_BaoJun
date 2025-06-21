@@ -22,6 +22,7 @@ public class ProductsController : Controller
             ProductsRepository.AddProduct(productViewModel.Product);
             return RedirectToAction(nameof(Index));
         }
+        productViewModel.Categories = CategoriesRepository.GetCategories();
         return View(productViewModel);
     }
 
