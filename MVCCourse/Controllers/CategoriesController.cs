@@ -20,12 +20,14 @@ public class CategoriesController : Controller
     [HttpPost]
     public IActionResult Add(Category category)
     {
-        if (!ModelState.IsValid)
+        if (ModelState.IsValid)
         {
-            return View(category);
+            CategoriesRepository.AddCategory(category);
+            return RedirectToAction(nameof(Index));
+          
         }
-        CategoriesRepository.AddCategory(category);
-        return RedirectToAction(nameof(Index));
+        ViewBag.Action = "Add";
+        return View(category); 
     }
 
     public IActionResult Edit(int? id)
@@ -40,10 +42,12 @@ public class CategoriesController : Controller
     {
         if (!ModelState.IsValid)
         {
-            return View(category);
+            CategoriesRepository.UpdateCategory(category.CategoryId, category);
+            return RedirectToAction(nameof(Index));
+           
         }
-        CategoriesRepository.UpdateCategory(category.CategoryId, category);
-        return RedirectToAction(nameof(Index));
+        ViewBag.Action = "Edit";
+        return View(category); 
     }
 
     // GET
