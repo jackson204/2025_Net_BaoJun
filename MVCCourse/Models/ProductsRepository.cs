@@ -43,6 +43,7 @@ public class ProductsRepository
             {
                 prod.Category = CategoriesRepository.GetCategoryById(product.CategoryId.Value);
             }
+            return prod;
         }
 
         return null;
