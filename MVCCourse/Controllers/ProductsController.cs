@@ -8,6 +8,7 @@ public class ProductsController : Controller
 {
     public IActionResult Edit(int id)
     {
+        ViewBag.Action = "Edit";
         var productViewModel = new ProductViewModel
         {
             Product = ProductsRepository.GetProductById(id)?? new Product(),
@@ -24,6 +25,7 @@ public class ProductsController : Controller
             ProductsRepository.UpdateProduct(productViewModel.Product.ProductId,productViewModel.Product);
             return RedirectToAction(nameof(Index));
         }
+        ViewBag.Action = "Edit";
         productViewModel.Categories = CategoriesRepository.GetCategories();
         return View(productViewModel); 
     }
@@ -35,6 +37,7 @@ public class ProductsController : Controller
         {
             Categories = CategoriesRepository.GetCategories()
         };
+        ViewBag.Action = "Add";
         return View(productViewModel);
     }
     [HttpPost]
@@ -45,6 +48,7 @@ public class ProductsController : Controller
             ProductsRepository.AddProduct(productViewModel.Product);
             return RedirectToAction(nameof(Index));
         }
+        ViewBag.Action = "Add";
         productViewModel.Categories = CategoriesRepository.GetCategories();
         return View(productViewModel);
     }
